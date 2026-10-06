@@ -1,0 +1,13 @@
+.login-form {
+    background: #5A6699;
+    width: 30%;
+    height: 75vh;
+    display: flex; 
+    justify-content: center;
+    border-radius: 12px;
+
+}
+
+.login-form h1 {
+    color: white;
+}
