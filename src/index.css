@@ -1,8 +1,13 @@
 :root {
-  --bg: #FAEBEB;
+  /* variables */
+  --bg: no-repeat url(../src/assets/login_background.avif);
 
-  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* set font */
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif; 
+
+  /* set bg properties */
   background: var(--bg);
+  background-size: cover;
 }
 
 body {

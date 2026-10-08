@@ -1,5 +1,10 @@
 .login-form {
-    background: #5A6699;
+    /* variables */
+    --bg-transparent: rgba(255, 255, 255, 0.2);
+
+    background-color: var(--bg-transparent);
+    padding: 30px;
+    color: #ffffff;
     width: 30%;
     height: 75vh;
     display: flex; 
