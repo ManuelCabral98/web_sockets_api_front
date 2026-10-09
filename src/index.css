@@ -1,6 +1,8 @@
 :root {
   /* variables */
   --bg: no-repeat url(../src/assets/login_background.avif);
+  --primary: black;
+  --hover: #4e7367
 
   /* set font */
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif; 

@@ -1,11 +1,20 @@
 import './LoginForm.css'
+import InputField from './InputField';
 
 function LoginForm() {
 
 
     return(
         <form className="login-form">
-            <h1>Iniciar Sesión</h1>
+            <h1>Log In</h1>
+            <div>
+                <InputField labelContent={'Username'} placeholder={'enter your username'}/>
+                <InputField labelContent={'Password'} placeholder={'••••'}/>
+            </div>
+
+            <button type='submit' className='button'>
+                Submit
+            </button>
 
         </form>
     )
