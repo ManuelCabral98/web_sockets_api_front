@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import LoginForm from './components/LoginForm'
 
 const USER = 'username'
-const TOKEN = 'jwt_token'
 
 function App() {
   // lazy initializer. Runs on first render and restore a session if already exists for 'user' and 'token'
