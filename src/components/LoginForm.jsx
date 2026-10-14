@@ -1,8 +1,9 @@
 import './LoginForm.css'
-import InputField from './InputField';
 import { useState } from 'react';
+import InputField from './InputField';
+import { login } from '../services/authService';
 
-function LoginForm() {
+function LoginForm( {onLogin} ) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
@@ -19,7 +20,18 @@ function LoginForm() {
         const validationError = validate()
         if (validationError) {
             setError(validationError)
-            return error
+            return 
+        }
+
+        setError('')
+
+        try {
+            const user = await login(username.trim(), password)
+            onLogin(user)
+        } catch (err) {
+            setError(err.message)
+        } finally { // this runs even on success and on error
+
         }
 
         
@@ -36,17 +48,19 @@ function LoginForm() {
                 labelContent={'Username'}
                 placeholder={'enter your username'}
                 value={username}
-                onChange={setUsername}
+                onChangeValue={setUsername}
                 />
                 
                 <InputField
                 labelContent={'Password'}
-                placeholder={'••••'}
+                placeholder={'••••••••••••'}
                 type={'password'}
                 value={password}
-                onChange={setPassword}
+                onChangeValue={setPassword}
                 />
             </div>
+
+            {error && <p className='login-error'>{error}</p>}
 
             <button
             type='submit'
