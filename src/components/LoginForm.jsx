@@ -2,22 +2,18 @@ import './LoginForm.css'
 import { useState } from 'react';
 import InputField from './InputField';
 import { login } from '../services/authService';
+import { validate } from '../utilities/validators';
 
-function LoginForm( {onLogin} ) {
+function LoginForm( {onLogin, onToGoRegister} ) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
 
-    function validate() {
-        if (username.trim() === '') return 'Missing username field!'
-        if (password === '') return 'Missing password field!'
-        return ''
-    }
-
     async function handleSubmit(event) {
         event.preventDefault() // avoid default browser behavior of reloading the web when a form is submitted
 
-        const validationError = validate()
+        const data = {username: username, password: password}
+        const validationError = validate(data)
         if (validationError) {
             setError(validationError)
             return 
@@ -39,9 +35,9 @@ function LoginForm( {onLogin} ) {
 
 
     return(
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="forms" onSubmit={handleSubmit}>
 
-            <h1>Log In</h1>
+            <h1 className='title'>Log In</h1>
 
             <div>
                 <InputField
@@ -67,6 +63,13 @@ function LoginForm( {onLogin} ) {
             className='button'>
                 Submit
             </button>
+
+            <p className='paragraph'>
+                Don't you have an account?{' '}
+                <button type='button' className='link-button' onClick={onToGoRegister}>
+                    Sign up
+                </button>
+            </p>
 
         </form>
     )
