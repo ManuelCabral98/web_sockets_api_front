@@ -48,3 +48,9 @@
 .title {
     margin-bottom: -50px;
 }
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 16px;
+    margin: 0;
+}

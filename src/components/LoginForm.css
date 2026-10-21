@@ -7,9 +7,3 @@
     background-color: var(--hover);
     border: 2px solid var(--primary);
 }
-
-.login-error {
-    color: #ff6b6b;
-    font-size: 16px;
-    margin: 0;
-}

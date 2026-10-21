@@ -12,7 +12,7 @@ function LoginForm( {onLogin, onToGoRegister} ) {
     async function handleSubmit(event) {
         event.preventDefault() // avoid default browser behavior of reloading the web when a form is submitted
 
-        const data = {username: username, password: password}
+        const data = {"Username": username, "Password": password}
         const validationError = validate(data)
         if (validationError) {
             setError(validationError)
@@ -28,9 +28,7 @@ function LoginForm( {onLogin, onToGoRegister} ) {
             setError(err.message)
         } finally { // this runs even on success and on error
 
-        }
-
-        
+        }  
     }
 
 
@@ -56,7 +54,7 @@ function LoginForm( {onLogin, onToGoRegister} ) {
                 />
             </div>
 
-            {error && <p className='login-error'>{error}</p>}
+            {error && <p className='error-message'>{error}</p>}
 
             <button
             type='submit'

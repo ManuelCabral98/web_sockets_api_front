@@ -8,5 +8,10 @@ export function validate(data) {
 
 // creates and return the message if any field is empty
 function messageValidation(field) {
-    return `Error! ${field} field is missing.`
+    return `Error! '${field}' field is missing.`
+}
+
+// validates if passwords match
+export function passwordsMatch(password1, password2) {
+    return password1 === password2 
 }
